@@ -1,0 +1,99 @@
+/* Extracted from index.html */
+:root {
+    /* Couleurs principales */
+    --accent-primary: #3B6A82;
+    /* Le bleu pétrole utilisé pour vos graphiques */
+    --accent-secondary: #C2593A;
+    /* L'orange terre cuite */
+
+    /* Couleurs de texte et fond */
+    --text-main: #2C2C2C;
+    --text-muted: #5A5A5A;
+    --neutral-bg: #F9F8F6;
+}
+
+/* Extension de Tailwind via des classes personnalisées ou injection */
+.bg-accent-primary {
+    background-color: var(--accent-primary);
+}
+
+.text-accent-primary {
+    color: var(--accent-primary);
+}
+
+.bg-accent-secondary {
+    background-color: var(--accent-secondary);
+}
+
+.text-accent-secondary {
+    color: var(--accent-secondary);
+}
+
+.bg-neutral-bg\/90 {
+    background-color: rgba(249, 248, 246, 0.9);
+}
+
+.text-text-main {
+    color: var(--text-main);
+}
+
+.text-text-muted {
+    color: var(--text-muted);
+}
+
+
+
+body {
+    background-color: #F9F8F6;
+    color: #2C2C2C;
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+    font-family: 'Lora', serif;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    max-height: 400px;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 280px;
+    }
+}
+
+.tab-active {
+    border-bottom: 2px solid #C2593A;
+    color: #C2593A;
+    font-weight: 600;
+}
+
+.tab-inactive {
+    color: #5A5A5A;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-inactive:hover {
+    color: #2C2C2C;
+    border-bottom: 2px solid #D1D5DB;
+}
+
+.fact-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
