@@ -1,15 +1,29 @@
 /* Extracted from index.html */
 :root {
-    /* Couleurs principales */
-    --accent-primary: #3B6A82;
-    /* Le bleu pétrole utilisé pour vos graphiques */
-    --accent-secondary: #C2593A;
-    /* L'orange terre cuite */
+    /* --- Typographies --- */
+    --font-titles: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 
-    /* Couleurs de texte et fond */
-    --text-main: #2C2C2C;
-    --text-muted: #5A5A5A;
+    /* --- Palette de Couleurs --- */
+    /* Couleurs d'accentuation */
+    --accent-primary: #3B6A82;
+    /* Bleu Pétrole (Technologie/Futur) */
+    --accent-secondary: #C2593A;
+    /* Terre Cuite (Alerte/Géopolitique) */
+
+    /* Nuances de gris et texte */
+    --text-main: #1A1A1A;
+    /* Presque noir pour un contraste maximal */
+    --text-muted: #525252;
+    /* Gris soutenu pour les textes secondaires */
+
+    /* Fonds et surfaces */
     --neutral-bg: #F9F8F6;
+    /* Fond "Papier" */
+    --surface-white: #FFFFFF;
+    /* Blanc pur pour les cartes */
+    --border-light: #E5E7EB;
+    /* Bordures discrètes */
 }
 
 /* Extension de Tailwind via des classes personnalisées ou injection */
@@ -44,17 +58,197 @@
 
 
 body {
-    background-color: #F9F8F6;
-    color: #2C2C2C;
-    font-family: 'Inter', sans-serif;
+    background-color: var(--neutral-bg);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* On lie aussi les titres aux variables */
 h1,
 h2,
 h3,
-h4,
 .font-serif {
-    font-family: 'Lora', serif;
+    font-family: var(--font-titles);
+    color: var(--text-main);
+}
+
+/* Micro-ajustement pour les paragraphes de texte */
+p {
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+}
+
+/* Style spécifique pour les chapeaux (introductions) */
+.lead-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Extracted from index.html */
+:root {
+    /* --- Typographies --- */
+    --font-titles: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* --- Palette de Couleurs --- */
+    /* Couleurs d'accentuation */
+    --accent-primary: #3B6A82;
+    /* Bleu Pétrole (Technologie/Futur) */
+    --accent-secondary: #C2593A;
+    /* Terre Cuite (Alerte/Géopolitique) */
+
+    /* Nuances de gris et texte */
+    --text-main: #1A1A1A;
+    /* Presque noir pour un contraste maximal */
+    --text-muted: #525252;
+    /* Gris soutenu pour les textes secondaires */
+
+    /* Fonds et surfaces */
+    --neutral-bg: #F9F8F6;
+    /* Fond "Papier" */
+    --surface-white: #FFFFFF;
+    /* Blanc pur pour les cartes */
+    --border-light: #E5E7EB;
+    /* Bordures discrètes */
+}
+
+/* Extension de Tailwind via des classes personnalisées ou injection */
+.bg-accent-primary {
+    background-color: var(--accent-primary);
+}
+
+.text-accent-primary {
+    color: var(--accent-primary);
+}
+
+.bg-accent-secondary {
+    background-color: var(--accent-secondary);
+}
+
+.text-accent-secondary {
+    color: var(--accent-secondary);
+}
+
+.bg-neutral-bg\/90 {
+    background-color: rgba(249, 248, 246, 0.9);
+}
+
+.text-text-main {
+    color: var(--text-main);
+}
+
+.text-text-muted {
+    color: var(--text-muted);
+}
+
+
+
+body {
+    background-color: var(--neutral-bg);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* On lie aussi les titres aux variables */
+h1,
+h2,
+h3,
+.font-serif {
+    font-family: var(--font-titles);
+    color: var(--text-main);
+}
+
+/* Micro-ajustement pour les paragraphes de texte */
+p {
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+}
+
+/* Style spécifique pour les chapeaux (introductions) */
+.lead-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    max-height: 400px;
+    background: var(--surface-white);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    border-color: rgba(59, 106, 130, 0.2);
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 280px;
+        padding: 1rem;
+    }
+}
+
+.tab-active {
+    border-bottom: 2px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+
+.tab-inactive {
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+}
+
+.tab-inactive:hover {
+    color: #2C2C2C;
+    border-bottom: 2px solid #D1D5DB;
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.7);
+    /* Fond blanc translucide */
+    backdrop-filter: blur(12px);
+    /* L'effet de flou magique */
+    -webkit-backdrop-filter: blur(12px);
+    /* Compatibilité Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Transition ultra-fluide */
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-primary);
+}
+
+/* État quand la carte est "révélée" */
+.fact-card.is-revealed {
+    border-left: 6px solid var(--accent-primary);
+    background: var(--surface-white);
+    box-shadow: inset 8px 0 15px -10px rgba(59, 106, 130, 0.3);
+    transform: scale(1.02);
 }
 
 .chart-container {
@@ -74,13 +268,13 @@ h4,
 }
 
 .tab-active {
-    border-bottom: 2px solid #C2593A;
-    color: #C2593A;
+    border-bottom: 2px solid var(--accent-secondary);
+    color: var(--accent-secondary);
     font-weight: 600;
 }
 
 .tab-inactive {
-    color: #5A5A5A;
+    color: var(--text-muted);
     border-bottom: 2px solid transparent;
 }
 
@@ -90,10 +284,126 @@ h4,
 }
 
 .fact-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: rgba(255, 255, 255, 0.7);
+    /* Fond blanc translucide */
+    backdrop-filter: blur(12px);
+    /* L'effet de flou magique */
+    -webkit-backdrop-filter: blur(12px);
+    /* Compatibilité Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Transition ultra-fluide */
+    position: relative;
+    overflow: hidden;
 }
 
 .fact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-primary);
+}
+
+/* État quand la carte est "révélée" */
+.fact-card.is-revealed {
+    border-left: 6px solid var(--accent-primary);
+    background: var(--surface-white);
+    box-shadow: inset 8px 0 15px -10px rgba(59, 106, 130, 0.3);
+    transform: scale(1.02);
+}
+
+
+/* --- Phase 2 : Navigation --- */
+
+nav {
+    height: 3.5rem;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* On s'assure que le logo change aussi de couleur pour l'unité visuelle */
+nav span.text-accent-primary {
+    transition: color 0.3s ease;
+}
+
+nav button {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+}
+
+nav button::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* Un peu plus bas pour ne pas coller au texte */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+nav button:hover {
+    color: var(--accent-primary) !important;
+    transform: translateY(-1px);
+}
+
+nav button:hover::after {
+    width: 100%;
+}
+
+.nav-scrolled {
+    /* Fond très légèrement beige et translucide (0.8 = 80% d'opacité) */
+    background-color: rgba(59, 106, 130, 0.35) !important;
+
+    /* Le flou qui crée l'effet de transparence "verre" */
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px);
+
+    /* Ta barre voyante en haut */
+    border-top: 3px solid var(--accent-primary);
+    border-bottom: 1px solid rgba(59, 106, 130, 0.1);
+
+    height: 3.2rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.nav-scrolled button {
+    color: var(--text-main) !important;
+}
+
+.nav-scrolled span {
+    color: var(--accent-primary) !important;
+}
+
+/* --- Phase 4 : Animations de Reveal --- */
+
+/* L'état de base : caché et légèrement plus bas */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    visibility: hidden;
+}
+
+/* L'état quand l'élément devient visible */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Optionnel : retarder un peu l'apparition des éléments qui se suivent */
+.reveal-delay-1 {
+    transition-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.3s;
 }

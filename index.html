@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Électrique au Pilori : Analyse d'une Transition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="antialiased overflow-x-hidden">
 
-    <nav class="fixed top-0 w-full bg-neutral-bg/90 backdrop-blur-md border-b border-gray-200 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+    <nav id="main-nav" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex justify-between items-center h-full">
                 <div class="flex items-center">
-                    <span class="font-serif font-bold text-xl tracking-tight text-accent-primary">&#x26A1; Dossier Mobilité</span>
+                    <span class="font-serif font-bold text-xl tracking-tight text-accent-primary">&#x26A1; Dossier
+                        Mobilité</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <button onclick="scrollToSection('intro')" class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Le Contexte</button>
-                    <button onclick="scrollToSection('mythes')" class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Mythes & Faits</button>
-                    <button onclick="scrollToSection('chiffres')" class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Le Choc des Chiffres</button>
-                    <button onclick="scrollToSection('geopolitique')" class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">L'Échéance</button>
+                    <button onclick="scrollToSection('intro')"
+                        class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Le
+                        Contexte</button>
+                    <button onclick="scrollToSection('mythes')"
+                        class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Mythes &
+                        Faits</button>
+                    <button onclick="scrollToSection('chiffres')"
+                        class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Le Choc
+                        des Chiffres</button>
+                    <button onclick="scrollToSection('geopolitique')"
+                        class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">L'Échéance</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <main class="pt-24 pb-16">
-        
+
         <section id="intro" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 pt-8">
             <div class="text-center mb-12">
-                <p class="text-accent-primary font-bold uppercase tracking-widest text-sm mb-4">Éditorial • Avril 2026</p>
-                <h1 class="text-4xl md:text-5xl font-serif font-bold text-text-main leading-tight mb-6">L’Électrique au Pilori : Pourquoi la France se déchire-t-elle sur sa Mobilité ?</h1>
+                <p class="text-accent-primary font-bold uppercase tracking-widest text-sm mb-4">Éditorial • Avril 2026
+                </p>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-text-main leading-tight mb-6">L’Électrique au
+                    Pilori : Pourquoi la France se déchire-t-elle sur sa Mobilité ?</h1>
                 <p class="text-lg md:text-xl text-text-muted leading-relaxed">
-                    Alors que le marché automobile vit sa plus grande mutation depuis l'invention du moteur à explosion, la France se déchire. Entre records de ventes et rejet épidermique, la voiture électrique (VE) n’est plus un simple objet technique : elle est devenue le punching-ball favori d'une partie des Français.
+                    Alors que le marché automobile vit sa plus grande mutation depuis l'invention du moteur à explosion,
+                    la France se déchire. Entre records de ventes et rejet épidermique, la voiture électrique (VE) n’est
+                    plus un simple objet technique : elle est devenue le punching-ball favori d'une partie des Français.
                 </p>
             </div>
 
@@ -48,59 +64,77 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
             <div class="bg-accent-primary text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
                 <div class="absolute top-0 right-0 -mt-10 -mr-10 text-9xl opacity-10">&#x1F50B;</div>
-                <h2 class="text-2xl font-serif font-bold mb-4">I. Le Règne de l'Émotion Brute</h2>
+                <h2 class="text-2xl font-serif font-bold mb-4 reveal">I. Le Règne de l'Émotion Brute</h2>
                 <p class="text-white/90 text-lg leading-relaxed max-w-3xl">
-                    Il suffit de parcourir les réseaux sociaux pour s'en convaincre : la voiture électrique ne laisse personne indifférent. Mais là où le bât blesse, c'est que le débat s'est déplacé du terrain technique vers celui du dogme.
+                    Il suffit de parcourir les réseaux sociaux pour s'en convaincre : la voiture électrique ne laisse
+                    personne indifférent. Mais là où le bât blesse, c'est que le débat s'est déplacé du terrain
+                    technique vers celui du dogme.
                 </p>
             </div>
         </div>
 
         <section id="mythes" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 pt-16">
             <div class="mb-10">
-                <h2 class="text-3xl font-serif font-bold text-text-main mb-4">Le paradoxe de l'information : Bruit contre Faits</h2>
+                <h2 class="text-3xl font-serif font-bold text-text-main mb-4 reveal">Le paradoxe de l'information : Bruit
+                    contre Faits</h2>
                 <p class="text-lg text-text-muted">
-                    Cette section confronte les peurs psychologiques les plus fréquentes (le "bruit" des réseaux sociaux) aux données réelles du terrain en 2026. L'objectif est de démontrer le décalage frappant entre l'usage fantasmé de l'automobile et la réalité statistique. Cliquez sur les mythes pour révéler les faits.
+                    Cette section confronte les peurs psychologiques les plus fréquentes (le "bruit" des réseaux
+                    sociaux) aux données réelles du terrain en 2026. L'objectif est de démontrer le décalage frappant
+                    entre l'usage fantasmé de l'automobile et la réalité statistique. Cliquez sur les mythes pour
+                    révéler les faits.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <div class="fact-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col h-full cursor-pointer" onclick="toggleFact(this, 'infra')">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+
+                <div class="fact-card p-6 flex flex-col h-full cursor-pointer" onclick="toggleFact(this, 'infra')">
                     <div class="text-3xl mb-4">&#x26FD;</div>
                     <h3 class="font-bold text-xl mb-2 text-text-main">L'angoisse de la panne</h3>
                     <div id="myth-infra" class="block">
-                        <p class="text-text-muted italic">"On ne trouvera jamais de borne libre pour recharger, c'est le désert."</p>
-                        <button class="mt-4 text-sm text-accent-primary font-semibold flex items-center">Voir la réalité &#x2192;</button>
+                        <p class="text-text-muted italic">"On ne trouvera jamais de borne libre pour recharger, c'est le
+                            désert."</p>
+                        <button class="mt-4 text-sm text-accent-primary font-semibold flex items-center">Voir la réalité
+                            &#x2192;</button>
                     </div>
                     <div id="fact-infra" class="hidden">
                         <p class="text-text-main font-semibold">Le réseau est dense et opérationnel.</p>
-                        <p class="text-sm text-text-muted mt-2">La France compte plus de <strong>190 000 points de recharge publics</strong> (fin 2025). Le taux de disponibilité atteint désormais 94%. L'angoisse persiste par méconnaissance.</p>
+                        <p class="text-sm text-text-muted mt-2">La France compte plus de <strong>190 000 points de
+                                recharge publics</strong> (fin 2025). Le taux de disponibilité atteint désormais 94%.
+                            L'angoisse persiste par méconnaissance.</p>
                     </div>
                 </div>
 
-                <div class="fact-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col h-full cursor-pointer" onclick="toggleFact(this, 'usage')">
+                <div class="fact-card p-6 flex flex-col h-full cursor-pointer" onclick="toggleFact(this, 'usage')">
                     <div class="text-3xl mb-4">&#x1F6E3;</div>
                     <h3 class="font-bold text-xl mb-2 text-text-main">Le décalage d'usage</h3>
                     <div id="myth-usage" class="block">
-                        <p class="text-text-muted italic">"J'ai peur de rester bloqué sur l'autoroute avec mes enfants. Je fais 800km d'une traite."</p>
-                        <button class="mt-4 text-sm text-accent-primary font-semibold flex items-center">Voir la réalité &#x2192;</button>
+                        <p class="text-text-muted italic">"J'ai peur de rester bloqué sur l'autoroute avec mes enfants.
+                            Je fais 800km d'une traite."</p>
+                        <button class="mt-4 text-sm text-accent-primary font-semibold flex items-center">Voir la réalité
+                            &#x2192;</button>
                     </div>
                     <div id="fact-usage" class="hidden">
                         <p class="text-text-main font-semibold">Un scénario catastrophe imaginaire.</p>
-                        <p class="text-sm text-text-muted mt-2">L'utilisateur moyen (comme Jean-Marc, 52 ans) parcourt <strong>35 km par jour</strong> et ne prend l'autoroute que 2 fois par an. Le besoin d'une autonomie de 1000km au quotidien est un fantasme.</p>
+                        <p class="text-sm text-text-muted mt-2">L'utilisateur moyen (comme Jean-Marc, 52 ans) parcourt
+                            <strong>35 km par jour</strong> et ne prend l'autoroute que 2 fois par an. Le besoin d'une
+                            autonomie de 1000km au quotidien est un fantasme.</p>
                     </div>
                 </div>
 
-                <div class="fact-card bg-white rounded-xl border border-gray-200 p-6 flex flex-col h-full cursor-pointer" onclick="toggleFact(this, 'fake')">
+                <div class="fact-card p-6 flex flex-col h-full cursor-pointer" onclick="toggleFact(this, 'fake')">
                     <div class="text-3xl mb-4">&#x1F525;</div>
                     <h3 class="font-bold text-xl mb-2 text-text-main">La viralité du faux</h3>
                     <div id="myth-fake" class="block">
-                        <p class="text-text-muted italic">"Les voitures électriques prennent feu tout le temps, c'est dangereux !"</p>
-                        <button class="mt-4 text-sm text-accent-primary font-semibold flex items-center">Voir la réalité &#x2192;</button>
+                        <p class="text-text-muted italic">"Les voitures électriques prennent feu tout le temps, c'est
+                            dangereux !"</p>
+                        <button class="mt-4 text-sm text-accent-primary font-semibold flex items-center">Voir la réalité
+                            &#x2192;</button>
                     </div>
                     <div id="fact-fake" class="hidden">
                         <p class="text-text-main font-semibold">Les statistiques prouvent l'inverse.</p>
-                        <p class="text-sm text-text-muted mt-2">Les incendies de VE sont statistiquement <strong>bien moins fréquents</strong> que pour les modèles thermiques. La surréaction est nourrie par des images sensationnalistes partagées massivement.</p>
+                        <p class="text-sm text-text-muted mt-2">Les incendies de VE sont statistiquement <strong>bien
+                                moins fréquents</strong> que pour les modèles thermiques. La surréaction est nourrie par
+                            des images sensationnalistes partagées massivement.</p>
                     </div>
                 </div>
             </div>
@@ -109,55 +143,71 @@
         <div class="w-full bg-gray-100 py-16 border-y border-gray-200 mb-24">
             <section id="chiffres" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
                 <div class="mb-12">
-                    <h2 class="text-3xl font-serif font-bold text-text-main mb-4">II. Le Choc des Chiffres : Quand la Raison affronte le Mythe</h2>
+                    <h2 class="text-3xl font-serif font-bold text-text-main mb-4 reveal">II. Le Choc des Chiffres : Quand la
+                        Raison affronte le Mythe</h2>
                     <p class="text-lg text-text-muted max-w-4xl">
-                        Face aux discours qualifiant la VE de suicide financier et de non-sens écologique, cette section déploie les données économiques (Coût Total de Possession) et écologiques (Dette Carbone) consolidées de 2026. L'objectif est de visualiser précisément les points de bascule où l'électrique devient mathématiquement et écologiquement plus rentable que le thermique.
+                        Face aux discours qualifiant la VE de suicide financier et de non-sens écologique, cette section
+                        déploie les données économiques (Coût Total de Possession) et écologiques (Dette Carbone)
+                        consolidées de 2026. L'objectif est de visualiser précisément les points de bascule où
+                        l'électrique devient mathématiquement et écologiquement plus rentable que le thermique.
                     </p>
                 </div>
 
-                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mb-8 border-b border-gray-300">
-                    <button onclick="switchChartTab('tco')" id="tab-tco" class="pb-3 text-lg px-2 tab-active transition-colors">1. Le Prix : L'arbre qui cache la forêt</button>
-                    <button onclick="switchChartTab('eco')" id="tab-eco" class="pb-3 text-lg px-2 tab-inactive transition-colors">2. L'Écologie : L'indignation géométrique</button>
+                <div
+                    class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mb-8 border-b border-gray-300">
+                    <button onclick="switchChartTab('tco')" id="tab-tco"
+                        class="pb-3 text-lg px-2 tab-active transition-colors">1. Le Prix : L'arbre qui cache la
+                        forêt</button>
+                    <button onclick="switchChartTab('eco')" id="tab-eco"
+                        class="pb-3 text-lg px-2 tab-inactive transition-colors">2. L'Écologie : L'indignation
+                        géométrique</button>
                 </div>
 
                 <div id="content-tco" class="block">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal">
                         <div class="lg:col-span-1">
                             <h3 class="text-xl font-bold mb-3">Le Coût Total de Possession (TCO)</h3>
                             <p class="text-text-muted mb-4 text-sm leading-relaxed">
-                                Certes, le neuf reste 15 à 20% plus cher à l'achat mais sur 5 ans, avec un sans-plomb à 1,95 € et une électricité compétitive, le point de basculement financier est rapide.
+                                Certes, le neuf reste 15 à 20% plus cher à l'achat mais sur 5 ans, avec un sans-plomb à
+                                1,95 € et une électricité compétitive, le point de basculement financier est rapide.
                             </p>
                             <div class="bg-white p-4 border-l-4 border-accent-primary rounded shadow-sm">
                                 <p class="text-sm font-semibold">Témoignage :</p>
-                                <p class="text-sm italic text-gray-600 mt-1">« J’économise 180 € par mois sur mon budget énergie et entretien. » - Marc, infirmier.</p>
+                                <p class="text-sm italic text-gray-600 mt-1">« J’économise 180 € par mois sur mon budget
+                                    énergie et entretien. » - Marc, infirmier.</p>
                             </div>
                         </div>
                         <div class="lg:col-span-2 bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                            <div class="chart-container">
+                            <div class="chart-container reveal">
                                 <canvas id="tcoChart"></canvas>
                             </div>
-                            <p class="text-xs text-center text-gray-500 mt-2">Le point d'intersection (environ 45 000 km) marque la rentabilité globale de l'électrique.</p>
+                            <p class="text-xs text-center text-gray-500 mt-2">Le point d'intersection (environ 45 000
+                                km) marque la rentabilité globale de l'électrique.</p>
                         </div>
                     </div>
                 </div>
 
                 <div id="content-eco" class="hidden">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal">
                         <div class="lg:col-span-1">
                             <h3 class="text-xl font-bold mb-3">Le Remboursement de la Dette Carbone</h3>
                             <p class="text-text-muted mb-4 text-sm leading-relaxed">
-                                Le débat sur l'extraction (lithium, cobalt) est souvent brandi. Pourtant, selon l'ADEME, grâce au mix énergétique décarboné français, la dette carbone de fabrication est vite effacée par l'absence d'émissions à l'usage.
+                                Le débat sur l'extraction (lithium, cobalt) est souvent brandi. Pourtant, selon l'ADEME,
+                                grâce au mix énergétique décarboné français, la dette carbone de fabrication est vite
+                                effacée par l'absence d'émissions à l'usage.
                             </p>
                             <div class="bg-white p-4 border-l-4 border-accent-secondary rounded shadow-sm">
                                 <p class="text-sm font-semibold">Le point aveugle :</p>
-                                <p class="text-sm text-gray-600 mt-1">On s'insurge contre les mines pour batteries, mais on ignore par habitude les marées noires et la pollution du raffinage pétrolier.</p>
+                                <p class="text-sm text-gray-600 mt-1">On s'insurge contre les mines pour batteries, mais
+                                    on ignore par habitude les marées noires et la pollution du raffinage pétrolier.</p>
                             </div>
                         </div>
                         <div class="lg:col-span-2 bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                            <div class="chart-container">
+                            <div class="chart-container reveal">
                                 <canvas id="ecoChart"></canvas>
                             </div>
-                            <p class="text-xs text-center text-gray-500 mt-2">Bilan carbone cumulé (Fabrication + Usage). La VE devient "verte" après 25k-30k km.</p>
+                            <p class="text-xs text-center text-gray-500 mt-2">Bilan carbone cumulé (Fabrication +
+                                Usage). La VE devient "verte" après 25k-30k km.</p>
                         </div>
                     </div>
                 </div>
@@ -167,57 +217,76 @@
         <section id="geopolitique" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
             <div class="text-center mb-12">
                 <span class="text-5xl mb-4 block">&#x1F30D;</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main mb-6">III. Le Mur du Pétrole : L'Impératif de Survie</h2>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main mb-6 reveal">III. Le Mur du Pétrole :
+                    L'Impératif de Survie</h2>
                 <p class="text-lg text-text-muted text-left">
-                    Cette section finale déconstruit le mythe de la "voiture propre" pour repositionner le débat sur sa véritable nature : une contrainte géologique inéluctable. L'objectif est de faire comprendre que la transition n'est pas un choix écologique de confort, mais une obligation de souveraineté face à l'épuisement programmé des ressources fossiles.
+                    Cette section finale déconstruit le mythe de la "voiture propre" pour repositionner le débat sur sa
+                    véritable nature : une contrainte géologique inéluctable. L'objectif est de faire comprendre que la
+                    transition n'est pas un choix écologique de confort, mais une obligation de souveraineté face à
+                    l'épuisement programmé des ressources fossiles.
                 </p>
             </div>
 
             <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-8 md:p-12">
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xl font-bold text-accent-primary mb-3 uppercase tracking-wider text-sm">L'échéance 2050-2060</h3>
+                        <h3 class="text-xl font-bold text-accent-primary mb-3 uppercase tracking-wider text-sm">
+                            L'échéance 2050-2060</h3>
                         <p class="text-text-main leading-relaxed">
-                            On présente souvent la VE comme une solution miracle. C’est une erreur. <strong class="text-accent-primary">La voiture électrique n'est pas parfaite ; elle est simplement « moins pire »</strong> que son ancêtre thermique. Selon les projections géologiques, entre 2050 et 2060, le pétrole extractible à un coût raisonnable aura disparu. Nous ne parlons pas de politique, mais de géologie pure. Parier sur le thermique, c’est parier sur une technologie obsolète avant la retraite de la prochaine génération.
+                            On présente souvent la VE comme une solution miracle. C’est une erreur. <strong
+                                class="text-accent-primary">La voiture électrique n'est pas parfaite ; elle est
+                                simplement « moins pire »</strong> que son ancêtre thermique. Selon les projections
+                            géologiques, entre 2050 et 2060, le pétrole extractible à un coût raisonnable aura disparu.
+                            Nous ne parlons pas de politique, mais de géologie pure. Parier sur le thermique, c’est
+                            parier sur une technologie obsolète avant la retraite de la prochaine génération.
                         </p>
                     </div>
 
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0 mt-1">
-                            <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-red-100 text-red-600 font-bold">!</span>
+                            <span
+                                class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-red-100 text-red-600 font-bold">!</span>
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-text-main mb-2">Le Piège de la Dépendance</h3>
-                            <p class="text-text-muted">Rester accroché au pétrole, c'est être l'otage permanent des pays producteurs et des fluctuations de prix dictées par des conflits lointains.</p>
+                            <p class="text-text-muted">Rester accroché au pétrole, c'est être l'otage permanent des pays
+                                producteurs et des fluctuations de prix dictées par des conflits lointains.</p>
                         </div>
                     </div>
 
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0 mt-1">
-                            <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-green-100 text-green-600 font-bold">&#x2713;</span>
+                            <span
+                                class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-green-100 text-green-600 font-bold">&#x2713;</span>
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-text-main mb-2">La Solution de Souveraineté</h3>
-                            <p class="text-text-muted">Passer à l’électrique, propulsé par une énergie nucléaire et renouvelable souveraine, est la seule stratégie garantissant une mobilité de masse après 2050.</p>
+                            <p class="text-text-muted">Passer à l’électrique, propulsé par une énergie nucléaire et
+                                renouvelable souveraine, est la seule stratégie garantissant une mobilité de masse après
+                                2050.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-10 p-6 bg-stone-100 border-l-4 border-stone-400 rounded-r-lg">
                     <p class="text-lg font-serif font-semibold text-stone-800">
-                        "Même si l’extraction du lithium vous inquiète, le passage à l’électrique reste une obligation. Le débat écologique n’est qu’une couche superficielle ; le fond du problème est que nous fonçons vers un mur de pénurie."
+                        "Même si l’extraction du lithium vous inquiète, le passage à l’électrique reste une obligation.
+                        Le débat écologique n’est qu’une couche superficielle ; le fond du problème est que nous fonçons
+                        vers un mur de pénurie."
                     </p>
                 </div>
             </div>
         </section>
 
         <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center">
-            <h2 class="text-sm font-bold tracking-widest uppercase text-accent-primary mb-6">Épilogue</h2>
+            <h2 class="text-sm font-bold tracking-widest uppercase text-accent-primary mb-6 reveal">Épilogue</h2>
             <p class="text-2xl font-serif leading-relaxed text-text-main max-w-3xl mx-auto">
-                La virulence des opposants témoigne d'un attachement à un monde qui s'efface. Refuser d’y voir clair aujourd’hui, c’est condamner notre mobilité de demain, et par extension, celle des générations futures.
+                La virulence des opposants témoigne d'un attachement à un monde qui s'efface. Refuser d’y voir clair
+                aujourd’hui, c’est condamner notre mobilité de demain, et par extension, celle des générations futures.
             </p>
             <p class="text-lg text-text-muted mt-6 max-w-2xl mx-auto italic">
-                Un réveil brutal, inaudible pour une partie de la population qui, bercée par l’abondance des Trente Glorieuses, a privilégié un confort immédiat au détriment de la viabilité de son héritage.
+                Un réveil brutal, inaudible pour une partie de la population qui, bercée par l’abondance des Trente
+                Glorieuses, a privilégié un confort immédiat au détriment de la viabilité de son héritage.
             </p>
         </section>
 
@@ -226,10 +295,12 @@
     <footer class="bg-text-main text-white py-12 mt-12 border-t-4 border-accent-primary">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-sm text-gray-400">© 2026 - Analyse Sociétale & Mobilité. Données : ADEME, Avere-France.</p>
-            <p class="text-xs text-gray-500 mt-2">Dossier de presse interactif généré sur la base du rapport "L'Électrique au Pilori".</p>
+            <p class="text-xs text-gray-500 mt-2">Dossier de presse interactif généré sur la base du rapport
+                "L'Électrique au Pilori".</p>
         </div>
     </footer>
 
     <script src="javascript.js"></script>
 </body>
+
 </html>
