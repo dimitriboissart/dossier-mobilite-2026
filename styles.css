@@ -410,20 +410,31 @@ nav button:hover::after {
 
 /* --- Menu Mobile Premium --- */
 #mobile-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed !important; /* On force la position fixe */
+    top: 56px !important;      /* On le cale sous la barre de 56px */
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(59, 106, 130, 0.1);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    
+    /* On force le bleu et l'opacité ici pour qu'il ne change jamais */
+    background-color: rgb(59, 106, 130) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 9999;
-    pointer-events: auto;
     opacity: 0;
-    display: none;
-    transition: all 0.3s ease;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(-10px);
+    display: block !important;
+}
+
+/* Quand il est actif */
+#mobile-menu.active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}
+
+#mobile-menu:not(.active) {
+    transform: translateY(-10px);
 }
 
 #mobile-menu button {
@@ -431,17 +442,35 @@ nav button:hover::after {
     align-items: center;
     padding: 1.25rem 1.5rem;
     width: 100%;
+    color: white;
     transition: background 0.2s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-weight: 500;
 }
 
 #mobile-menu button:hover {
-    background: rgba(59, 106, 130, 0.05);
-    color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mobile-menu span.ml-auto {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 #mobile-menu:not(.hidden) {
     display: block;
     opacity: 1;
+}
+
+/* On cible très précisément les boutons à l'intérieur du menu mobile */
+#main-nav #mobile-menu button,
+#main-nav #mobile-menu button span {
+    color: #ffffff !important; /* Force le blanc pur */
+    -webkit-text-fill-color: #ffffff !important; /* Sécurité pour certains navigateurs */
+    opacity: 1 !important;
+}
+
+/* On s'assure que même au survol, ça reste lisible */
+#main-nav #mobile-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
 }

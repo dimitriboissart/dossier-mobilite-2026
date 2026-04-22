@@ -177,29 +177,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('menu-icon');
 
-        if (menu.classList.contains('hidden')) {
-            // OUVERTURE
-            menu.classList.remove('hidden');
-            menu.style.opacity = '0';
-            menu.style.transform = 'translateY(-10px)';
+        // On utilise une classe "active" plutôt que de retirer "hidden"
+        menu.classList.toggle('active');
 
-            // Petit délai pour déclencher la transition
-            setTimeout(() => {
-                menu.style.transition = 'all 0.3s ease-out';
-                menu.style.opacity = '1';
-                menu.style.transform = 'translateY(0)';
-            }, 10);
+        const isOpen = menu.classList.contains('active');
 
+        if (isOpen) {
             icon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Croix
         } else {
-            // FERMETURE
-            menu.style.opacity = '0';
-            menu.style.transform = 'translateY(-10px)';
-
-            setTimeout(() => {
-                menu.classList.add('hidden');
-            }, 300); // Attend la fin de l'anim
-
             icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger
         }
     };
@@ -208,4 +193,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (boutonMobile) {
         boutonMobile.addEventListener('click', window.toggleMobileMenu);
     }
+
+    // Fermer le menu mobile si l'utilisateur scroll la page
+    window.addEventListener('scroll', () => {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        if (menu && menu.classList.contains('active')) {
+            menu.classList.remove('active');
+            if (icon) icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+        }
+    });
 }); // Fermeture finale du DOMContentLoaded (très important) // Fin du DOMContentLoaded // Fermeture correcte du DOMContentLoaded
