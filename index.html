@@ -17,11 +17,12 @@
 
     <nav id="main-nav" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="flex justify-between items-center h-full">
+            <div class="flex justify-between items-center h-14">
                 <div class="flex items-center">
                     <span class="font-serif font-bold text-xl tracking-tight text-accent-primary">&#x26A1; Dossier
                         Mobilité</span>
                 </div>
+
                 <div class="hidden md:flex items-center space-x-8">
                     <button onclick="scrollToSection('intro')"
                         class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">Le
@@ -35,6 +36,36 @@
                     <button onclick="scrollToSection('geopolitique')"
                         class="text-sm font-medium text-text-muted hover:text-accent-primary transition-colors">L'Échéance</button>
                 </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-accent-primary p-2 focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="flex flex-col">
+                <button onclick="scrollToSection('intro'); toggleMobileMenu()" class="border-b border-gray-100">
+                    <span class="ml-6">Le Contexte</span>
+                    <span class="ml-auto mr-6 opacity-30">→</span>
+                </button>
+                <button onclick="scrollToSection('mythes'); toggleMobileMenu()" class="border-b border-gray-100">
+                    <span class="ml-6">Mythes & Faits</span>
+                    <span class="ml-auto mr-6 opacity-30">→</span>
+                </button>
+                <button onclick="scrollToSection('chiffres'); toggleMobileMenu()" class="border-b border-gray-100">
+                    <span class="ml-6">Le Choc des Chiffres</span>
+                    <span class="ml-auto mr-6 opacity-30">→</span>
+                </button>
+                <button onclick="scrollToSection('geopolitique'); toggleMobileMenu()">
+                    <span class="ml-6">L'Échéance</span>
+                    <span class="ml-auto mr-6 opacity-30">→</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -75,7 +106,8 @@
 
         <section id="mythes" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 pt-16">
             <div class="mb-10">
-                <h2 class="text-3xl font-serif font-bold text-text-main mb-4 reveal">Le paradoxe de l'information : Bruit
+                <h2 class="text-3xl font-serif font-bold text-text-main mb-4 reveal">Le paradoxe de l'information :
+                    Bruit
                     contre Faits</h2>
                 <p class="text-lg text-text-muted">
                     Cette section confronte les peurs psychologiques les plus fréquentes (le "bruit" des réseaux
@@ -117,7 +149,8 @@
                         <p class="text-text-main font-semibold">Un scénario catastrophe imaginaire.</p>
                         <p class="text-sm text-text-muted mt-2">L'utilisateur moyen (comme Jean-Marc, 52 ans) parcourt
                             <strong>35 km par jour</strong> et ne prend l'autoroute que 2 fois par an. Le besoin d'une
-                            autonomie de 1000km au quotidien est un fantasme.</p>
+                            autonomie de 1000km au quotidien est un fantasme.
+                        </p>
                     </div>
                 </div>
 
@@ -143,7 +176,8 @@
         <div class="w-full bg-gray-100 py-16 border-y border-gray-200 mb-24">
             <section id="chiffres" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
                 <div class="mb-12">
-                    <h2 class="text-3xl font-serif font-bold text-text-main mb-4 reveal">II. Le Choc des Chiffres : Quand la
+                    <h2 class="text-3xl font-serif font-bold text-text-main mb-4 reveal">II. Le Choc des Chiffres :
+                        Quand la
                         Raison affronte le Mythe</h2>
                     <p class="text-lg text-text-muted max-w-4xl">
                         Face aux discours qualifiant la VE de suicide financier et de non-sens écologique, cette section
@@ -217,7 +251,8 @@
         <section id="geopolitique" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
             <div class="text-center mb-12">
                 <span class="text-5xl mb-4 block">&#x1F30D;</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main mb-6 reveal">III. Le Mur du Pétrole :
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-text-main mb-6 reveal">III. Le Mur du Pétrole
+                    :
                     L'Impératif de Survie</h2>
                 <p class="text-lg text-text-muted text-left">
                     Cette section finale déconstruit le mythe de la "voiture propre" pour repositionner le débat sur sa

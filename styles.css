@@ -407,3 +407,41 @@ nav button:hover::after {
 .reveal-delay-2 {
     transition-delay: 0.3s;
 }
+
+/* --- Menu Mobile Premium --- */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(59, 106, 130, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    pointer-events: auto;
+    opacity: 0;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu button {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    font-weight: 500;
+}
+
+#mobile-menu button:hover {
+    background: rgba(59, 106, 130, 0.05);
+    color: var(--accent-primary);
+}
+
+#mobile-menu:not(.hidden) {
+    display: block;
+    opacity: 1;
+}

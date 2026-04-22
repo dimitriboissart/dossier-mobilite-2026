@@ -166,4 +166,46 @@ document.addEventListener('DOMContentLoaded', function () {
     // Lancement de l'initialisation
     initReveal();
 
+    // --- 7. Gestion du Menu Mobile (Correction Définitive) ---
+    const leBouton = document.getElementById('mobile-menu-button');
+    const leMenu = document.getElementById('mobile-menu');
+    const lIcone = document.getElementById('menu-icon');
+
+    // On définit la fonction globalement
+    // --- 7. Gestion du Menu Mobile avec Animation ---
+    window.toggleMobileMenu = function () {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        if (menu.classList.contains('hidden')) {
+            // OUVERTURE
+            menu.classList.remove('hidden');
+            menu.style.opacity = '0';
+            menu.style.transform = 'translateY(-10px)';
+
+            // Petit délai pour déclencher la transition
+            setTimeout(() => {
+                menu.style.transition = 'all 0.3s ease-out';
+                menu.style.opacity = '1';
+                menu.style.transform = 'translateY(0)';
+            }, 10);
+
+            icon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Croix
+        } else {
+            // FERMETURE
+            menu.style.opacity = '0';
+            menu.style.transform = 'translateY(-10px)';
+
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300); // Attend la fin de l'anim
+
+            icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger
+        }
+    };
+    // On lie le bouton physique à la fonction
+    const boutonMobile = document.getElementById('mobile-menu-button');
+    if (boutonMobile) {
+        boutonMobile.addEventListener('click', window.toggleMobileMenu);
+    }
 }); // Fermeture finale du DOMContentLoaded (très important) // Fin du DOMContentLoaded // Fermeture correcte du DOMContentLoaded
